@@ -31,8 +31,8 @@ class POSETRACKDataset(JointsDataset):
     '''
     "keypoints": {
         0: "nose",
-        1: "left_eye",
-        2: "right_eye",
+        1: "head_top",
+        2: "head_bottom",
         3: "left_ear",
         4: "right_ear",
         5: "left_shoulder",
@@ -87,8 +87,7 @@ class POSETRACKDataset(JointsDataset):
         logger.info('=> num_images: {}'.format(self.num_images))
 
         self.num_joints = 17
-        self.flip_pairs = [[1, 2], [3, 4], [5, 6], [7, 8],
-                           [9, 10], [11, 12], [13, 14], [15, 16]]
+        self.flip_pairs = [[3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14], [15, 16]]
         self.parent_ids = None
 
         self.db = self._get_db()
